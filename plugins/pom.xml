@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>datax-all</artifactId>
+        <groupId>com.alibaba.datax</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>mysqlreader</module>
+        <!--        <module>drdsreader</module>-->
+        <!--        <module>sqlserverreader</module>-->
+        <module>postgresqlreader</module>
+        <!--        <module>kingbaseesreader</module>-->
+        <module>oraclereader</module>
+        <!--        <module>cassandrareader</module>-->
+        <!--        <module>oceanbasev10reader</module>-->
+        <!--        <module>rdbmsreader</module>-->
+
+        <!--        <module>odpsreader</module>-->
+        <!--        <module>otsreader</module>-->
+        <!--        <module>otsstreamreader</module>-->
+        <module>hbase11xreader</module>
+        <!--        <module>hbase094xreader</module>-->
+        <!--        <module>hbase11xsqlreader</module>-->
+        <!--        <module>hbase20xsqlreader</module>-->
+
+        <!--        <module>ossreader</module>-->
+        <module>hdfsreader</module>
+        <!--        <module>ftpreader</module>-->
+        <module>txtfilereader</module>
+        <!--        <module>streamreader</module>-->
+
+        <module>mongodbreader</module>
+        <!--        <module>tdenginereader</module>-->
+        <!--        <module>gdbreader</module>-->
+        <!--        <module>tsdbreader</module>-->
+        <!--        <module>opentsdbreader</module>-->
+
+
+        <!-- writer -->
+        <module>mysqlwriter</module>
+        <!--        <module>drdswriter</module>-->
+        <module>oraclewriter</module>
+        <!--        <module>sqlserverwriter</module>-->
+        <module>postgresqlwriter</module>
+        <!--        <module>kingbaseeswriter</module>-->
+        <!--        <module>adswriter</module>-->
+        <!--        <module>oceanbasev10writer</module>-->
+        <!--        <module>cassandrawriter</module>-->
+        <module>clickhousewriter</module>
+        <!--        <module>adbpgwriter</module>-->
+        <!--        <module>hologresjdbcwriter</module>-->
+        <!--        <module>rdbmswriter</module>-->
+
+
+        <!--        <module>odpswriter</module>-->
+        <!--        <module>osswriter</module>-->
+        <!--        <module>otswriter</module>-->
+        <module>hbase11xwriter</module>
+        <!--        <module>hbase094xwriter</module>-->
+        <!--        <module>hbase11xsqlwriter</module>-->
+        <!--        <module>hbase20xsqlwriter</module>-->
+        <!--        <module>kuduwriter</module>-->
+        <!--        <module>ftpwriter</module>-->
+        <module>hdfswriter</module>
+        <module>txtfilewriter</module>
+        <!--        <module>streamwriter</module>-->
+
+        <module>elasticsearchwriter</module>
+        <!--        <module>mongodbwriter</module>-->
+        <!--        <module>tdenginewriter</module>-->
+        <!--        <module>ocswriter</module>-->
+        <!--        <module>tsdbwriter</module>-->
+        <!--        <module>gdbwriter</module>-->
+        <!--        <module>oscarwriter</module>-->
+        <module>kafkawriter</module>
+    </modules>
+
+    <!--<dependencyManagement>-->
+    <!--    <dependencies>-->
+    <!--        <dependency>-->
+    <!--            <groupId>com.alibaba.datax</groupId>-->
+    <!--            <artifactId>datax-all</artifactId>-->
+    <!--            <version>${datax-project-version}</version>-->
+    <!--            <type>pom</type>-->
+    <!--            <scope>import</scope>-->
+    <!--        </dependency>-->
+    <!--    </dependencies>-->
+    <!--</dependencyManagement>-->
+
+    <artifactId>plugins</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>package.xml</descriptor>
+                    </descriptors>
+                    <finalName>datax</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>dwzip</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
